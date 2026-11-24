@@ -1,0 +1,45 @@
+<xilinx:hls_fe_msgs>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="butterfly.cpp:4:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="barrett_reduce" ARG_PragmaIsValid="1" ARG_PragmaType="inline" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="butterfly.cpp:20:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="mod_add" ARG_PragmaIsValid="1" ARG_PragmaType="inline" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="butterfly.cpp:27:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="mod_sub" ARG_PragmaIsValid="1" ARG_PragmaType="inline" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="butterfly.cpp:35:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="mod_mul" ARG_PragmaIsValid="1" ARG_PragmaOptions="off" ARG_PragmaType="inline" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="N:/hls/run_hls.tcl:23:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaContext="directive" ARG_PragmaFunction="butterfly_hls" ARG_PragmaIsValid="1" ARG_PragmaOptions="name=butterfly_hls" ARG_PragmaType="top" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="butterfly.cpp:82:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="butterfly_hls" ARG_PragmaIsValid="1" ARG_PragmaOptions="ap_ctrl_hs port=return" ARG_PragmaType="interface" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="butterfly.cpp:83:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="butterfly_hls" ARG_PragmaIsValid="1" ARG_PragmaOptions="ap_none port=a" ARG_PragmaType="interface" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="butterfly.cpp:84:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="butterfly_hls" ARG_PragmaIsValid="1" ARG_PragmaOptions="ap_none port=b" ARG_PragmaType="interface" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="butterfly.cpp:85:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="butterfly_hls" ARG_PragmaIsValid="1" ARG_PragmaOptions="ap_none port=w" ARG_PragmaType="interface" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="butterfly.cpp:86:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="butterfly_hls" ARG_PragmaIsValid="1" ARG_PragmaOptions="ap_none port=mode" ARG_PragmaType="interface" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="butterfly.cpp:87:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="butterfly_hls" ARG_PragmaIsValid="1" ARG_PragmaOptions="ap_none port=out_lo" ARG_PragmaType="interface" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="butterfly.cpp:88:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="butterfly_hls" ARG_PragmaIsValid="1" ARG_PragmaOptions="ap_none port=out_hi" ARG_PragmaType="interface" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="butterfly.cpp:89:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="butterfly_hls" ARG_PragmaIsValid="1" ARG_PragmaOptions="II=1" ARG_PragmaType="pipeline" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="butterfly.cpp:90:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="butterfly_hls" ARG_PragmaIsValid="1" ARG_PragmaOptions="function instances=mod_mul limit=2" ARG_PragmaType="allocation" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+</xilinx:hls_fe_msgs>
+

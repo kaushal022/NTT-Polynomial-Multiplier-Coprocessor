@@ -1,0 +1,92 @@
+--- !Passed
+Pass:            inline
+Name:            AlwaysInline
+DebugLoc:        { File: butterfly.cpp, Line: 37, Column: 12 }
+Function:        _ZL7mod_mul7ap_uintILi12EES0_
+Args:            
+  - String:          'Inlining function '''
+  - Callee:          'barrett_reduce(ap_uint<24>)'
+    DebugLoc:        { File: butterfly.cpp, Line: 3, Column: 0 }
+  - String:          ''' into '''
+  - Caller:          'mod_mul(ap_uint<12>, ap_uint<12>)'
+    DebugLoc:        { File: butterfly.cpp, Line: 34, Column: 0 }
+  - String:          ''''
+...
+--- !Missed
+Pass:            inline
+Name:            NeverInline
+DebugLoc:        { File: butterfly.cpp, Line: 100, Column: 18 }
+Function:        _Z13butterfly_hls7ap_uintILi12EES0_S0_S_ILi1EERS0_S2_
+Args:            
+  - Callee:          'mod_mul(ap_uint<12>, ap_uint<12>)'
+    DebugLoc:        { File: butterfly.cpp, Line: 34, Column: 0 }
+  - String:          ' not inlined into '
+  - Caller:          'butterfly_hls(ap_uint<12>, ap_uint<12>, ap_uint<12>, ap_uint<1>, ap_uint<12>&, ap_uint<12>&)'
+    DebugLoc:        { File: butterfly.cpp, Line: 81, Column: 0 }
+  - String:          ' because it should never be inlined (cost=never)'
+...
+--- !Passed
+Pass:            inline
+Name:            AlwaysInline
+DebugLoc:        { File: butterfly.cpp, Line: 94, Column: 18 }
+Function:        _Z13butterfly_hls7ap_uintILi12EES0_S0_S_ILi1EERS0_S2_
+Args:            
+  - String:          'Inlining function '''
+  - Callee:          'mod_add(ap_uint<12>, ap_uint<12>)'
+    DebugLoc:        { File: butterfly.cpp, Line: 19, Column: 0 }
+  - String:          ''' into '''
+  - Caller:          'butterfly_hls(ap_uint<12>, ap_uint<12>, ap_uint<12>, ap_uint<1>, ap_uint<12>&, ap_uint<12>&)'
+    DebugLoc:        { File: butterfly.cpp, Line: 81, Column: 0 }
+  - String:          ''''
+...
+--- !Passed
+Pass:            inline
+Name:            AlwaysInline
+DebugLoc:        { File: butterfly.cpp, Line: 98, Column: 28 }
+Function:        _Z13butterfly_hls7ap_uintILi12EES0_S0_S_ILi1EERS0_S2_
+Args:            
+  - String:          'Inlining function '''
+  - Callee:          'mod_sub(ap_uint<12>, ap_uint<12>)'
+    DebugLoc:        { File: butterfly.cpp, Line: 26, Column: 0 }
+  - String:          ''' into '''
+  - Caller:          'butterfly_hls(ap_uint<12>, ap_uint<12>, ap_uint<12>, ap_uint<1>, ap_uint<12>&, ap_uint<12>&)'
+    DebugLoc:        { File: butterfly.cpp, Line: 81, Column: 0 }
+  - String:          ''''
+...
+--- !Missed
+Pass:            inline
+Name:            NeverInline
+DebugLoc:        { File: butterfly.cpp, Line: 93, Column: 25 }
+Function:        _Z13butterfly_hls7ap_uintILi12EES0_S0_S_ILi1EERS0_S2_
+Args:            
+  - Callee:          'mod_mul(ap_uint<12>, ap_uint<12>)'
+    DebugLoc:        { File: butterfly.cpp, Line: 34, Column: 0 }
+  - String:          ' not inlined into '
+  - Caller:          'butterfly_hls(ap_uint<12>, ap_uint<12>, ap_uint<12>, ap_uint<1>, ap_uint<12>&, ap_uint<12>&)'
+    DebugLoc:        { File: butterfly.cpp, Line: 81, Column: 0 }
+  - String:          ' because it should never be inlined (cost=never)'
+...
+--- !Missed
+Pass:            inline
+Name:            NeverInline
+Function:        apatb_butterfly_hls_ir
+Args:            
+  - Callee:          'butterfly_hls(ap_uint<12>, ap_uint<12>, ap_uint<12>, ap_uint<1>, ap_uint<12>&, ap_uint<12>&)'
+    DebugLoc:        { File: butterfly.cpp, Line: 81, Column: 0 }
+  - String:          ' not inlined into '
+  - Caller:          apatb_butterfly_hls_ir
+  - String:          ' because it should never be inlined (cost=never)'
+...
+--- !Missed
+Pass:            inline
+Name:            NeverInline
+DebugLoc:        { File: butterfly.cpp, Line: 93, Column: 25 }
+Function:        _Z13butterfly_hls7ap_uintILi12EES0_S0_S_ILi1EERS0_S2_
+Args:            
+  - Callee:          'mod_mul(ap_uint<12>, ap_uint<12>)'
+    DebugLoc:        { File: butterfly.cpp, Line: 34, Column: 0 }
+  - String:          ' not inlined into '
+  - Caller:          'butterfly_hls(ap_uint<12>, ap_uint<12>, ap_uint<12>, ap_uint<1>, ap_uint<12>&, ap_uint<12>&)'
+    DebugLoc:        { File: butterfly.cpp, Line: 81, Column: 0 }
+  - String:          ' because it should never be inlined (cost=never)'
+...

@@ -1,0 +1,137 @@
+
+
+================================================================
+== Synthesis Summary Report of 'butterfly_hls'
+================================================================
++ General Information: 
+    * Date:           Tue Nov 24 01:02:42 2026
+    * Version:        2024.2 (Build 5238294 on Nov  8 2024)
+    * Project:        prj_butterfly_var1
+    * Solution:       solution1 (Vivado IP Flow Target)
+    * Product family: zynq
+    * Target device:  xc7z010-clg400-1
+    
+
++ Performance & Resource Estimates: 
+    
+    PS: '+' for module; 'o' for loop; '*' for dataflow
+    +-----------------+------+------+---------+--------+----------+---------+------+----------+------+--------+-----------+-----------+-----+
+    |     Modules     | Issue|      | Latency | Latency| Iteration|         | Trip |          |      |        |           |           |     |
+    |     & Loops     | Type | Slack| (cycles)|  (ns)  |  Latency | Interval| Count| Pipelined| BRAM |   DSP  |     FF    |    LUT    | URAM|
+    +-----------------+------+------+---------+--------+----------+---------+------+----------+------+--------+-----------+-----------+-----+
+    |+ butterfly_hls  |     -|  0.76|        8|  80.000|         -|        1|     -|       yes|     -|  3 (3%)|   521 (1%)|   428 (2%)|    -|
+    | + mod_mul       |     -|  0.76|        5|  50.000|         -|        1|     -|       yes|     -|  3 (3%)|  151 (~0%)|  128 (~0%)|    -|
+    +-----------------+------+------+---------+--------+----------+---------+------+----------+------+--------+-----------+-----------+-----+
+
+
+================================================================
+== HW Interfaces
+================================================================
+* Other Ports
++--------+---------+-----------+----------+
+| Port   | Mode    | Direction | Bitwidth |
++--------+---------+-----------+----------+
+| a      | ap_none | in        | 12       |
+| b      | ap_none | in        | 12       |
+| mode   | ap_none | in        | 1        |
+| out_hi | ap_none | out       | 12       |
+| out_lo | ap_none | out       | 12       |
+| w      | ap_none | in        | 12       |
++--------+---------+-----------+----------+
+
+* TOP LEVEL CONTROL
++-----------+------------+-----------------------------------+
+| Interface | Type       | Ports                             |
++-----------+------------+-----------------------------------+
+| ap_clk    | clock      | ap_clk                            |
+| ap_rst    | reset      | ap_rst                            |
+| ap_ctrl   | ap_ctrl_hs | ap_done ap_idle ap_ready ap_start |
++-----------+------------+-----------------------------------+
+
+
+================================================================
+== SW I/O Information
+================================================================
+* Top Function Arguments
++----------+-----------+--------------+
+| Argument | Direction | Datatype     |
++----------+-----------+--------------+
+| a        | in        | ap_uint<12>  |
+| b        | in        | ap_uint<12>  |
+| w        | in        | ap_uint<12>  |
+| mode     | in        | ap_uint<1>   |
+| out_lo   | out       | ap_uint<12>& |
+| out_hi   | out       | ap_uint<12>& |
++----------+-----------+--------------+
+
+* SW-to-HW Mapping
++----------+--------------+---------+
+| Argument | HW Interface | HW Type |
++----------+--------------+---------+
+| a        | a            | port    |
+| b        | b            | port    |
+| w        | w            | port    |
+| mode     | mode         | port    |
+| out_lo   | out_lo       | port    |
+| out_hi   | out_hi       | port    |
++----------+--------------+---------+
+
+
+================================================================
+== Bind Op Report
+================================================================
++--------------------------------------+-----+--------+-------------+--------+-----------+---------+
+| Name                                 | DSP | Pragma | Variable    | Op     | Impl      | Latency |
++--------------------------------------+-----+--------+-------------+--------+-----------+---------+
+| + butterfly_hls                      | 3   |        |             |        |           |         |
+|   sum_2_fu_210_p2                    |     |        | sum_2       | add    | fabric    | 0       |
+|   add_ln22_1_fu_216_p2               |     |        | add_ln22_1  | add    | fabric    | 0       |
+|   select_ln23_fu_238_p3              |     |        | select_ln23 | select | auto_sel  | 0       |
+|   diff_2_fu_247_p2                   |     |        | diff_2      | sub    | fabric    | 0       |
+|   add_ln29_1_fu_265_p2               |     |        | add_ln29_1  | add    | fabric    | 0       |
+|   select_ln29_fu_271_p3              |     |        | select_ln29 | select | auto_sel  | 0       |
+|   sum_fu_135_p2                      |     |        | sum         | add    | fabric    | 0       |
+|   add_ln22_fu_141_p2                 |     |        | add_ln22    | add    | fabric    | 0       |
+|   sum_1_fu_163_p3                    |     |        | sum_1       | select | auto_sel  | 0       |
+|   diff_fu_171_p2                     |     |        | diff        | sub    | fabric    | 0       |
+|   add_ln29_fu_189_p2                 |     |        | add_ln29    | add    | fabric    | 0       |
+|   diff_1_fu_195_p3                   |     |        | diff_1      | select | auto_sel  | 0       |
+|  + mod_mul                           | 3   |        |             |        |           |         |
+|    mul_12ns_12ns_24_1_0_U1           | 1   |        | product     | mul    | auto      | 0       |
+|    mul_24ns_14ns_37_1_0_U2           | 1   |        | product_m   | mul    | auto      | 0       |
+|    mac_muladd_13s_13s_13ns_13_4_0_U3 | 1   |        | mul_ln11    | mul    | dsp_slice | 3       |
+|    mac_muladd_13s_13s_13ns_13_4_0_U3 | 1   |        | r           | add    | dsp_slice | 3       |
+|    icmp_ln13_fu_69_p2                |     |        | icmp_ln13   | setgt  | auto      | 0       |
+|    add_ln13_fu_77_p2                 |     |        | add_ln13    | add    | fabric    | 0       |
+|    select_ln13_fu_83_p3              |     |        | select_ln13 | select | auto_sel  | 0       |
++--------------------------------------+-----+--------+-------------+--------+-----------+---------+
+
+
+================================================================
+== Storage Report
+================================================================
+  No bind storage info in design
+
+================================================================
+== Pragma Report
+================================================================
+* Valid Pragma Syntax
++------------+------------------------------------+-------------------------------------------+
+| Type       | Options                            | Location                                  |
++------------+------------------------------------+-------------------------------------------+
+| inline     |                                    | butterfly.cpp:4 in barrett_reduce         |
+| inline     |                                    | butterfly.cpp:20 in mod_add               |
+| inline     |                                    | butterfly.cpp:27 in mod_sub               |
+| inline     | off                                | butterfly.cpp:35 in mod_mul               |
+| interface  | ap_ctrl_hs port=return             | butterfly.cpp:50 in butterfly_hls, return |
+| interface  | ap_none port=a                     | butterfly.cpp:51 in butterfly_hls, a      |
+| interface  | ap_none port=b                     | butterfly.cpp:52 in butterfly_hls, b      |
+| interface  | ap_none port=w                     | butterfly.cpp:53 in butterfly_hls, w      |
+| interface  | ap_none port=mode                  | butterfly.cpp:54 in butterfly_hls, mode   |
+| interface  | ap_none port=out_lo                | butterfly.cpp:55 in butterfly_hls, out_lo |
+| interface  | ap_none port=out_hi                | butterfly.cpp:56 in butterfly_hls, out_hi |
+| pipeline   | II=1                               | butterfly.cpp:57 in butterfly_hls         |
+| allocation | function instances=mod_mul limit=1 | butterfly.cpp:58 in butterfly_hls         |
++------------+------------------------------------+-------------------------------------------+
+
+

@@ -1,0 +1,26 @@
+[tasks]
+bmc
+prove
+bug_inject
+
+[options]
+bmc: mode bmc
+bmc: depth 30
+prove: mode prove
+prove: depth 30
+bug_inject: mode bmc
+bug_inject: depth 30
+bug_inject: expect fail
+
+[engines]
+smtbmc z3
+
+[script]
+read -formal ntt_addr_gen.v
+read -formal bram_no_collision.v
+bug_inject: chparam -set INJECT_BUG 1 bram_no_collision
+prep -top bram_no_collision
+
+[files]
+../../rtl/ntt/ntt_addr_gen.v
+bram_no_collision.v

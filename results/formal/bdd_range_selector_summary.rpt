@@ -1,0 +1,20 @@
+================================================================================
+ROBDD ANALYSIS REPORT - AXI RANGE SELECTOR / REGISTER ADDRESS DECODER
+================================================================================
+Circuit: rtl/axi/axi_lite_coprocessor.v
+
+Ordering Scheme            | Variable Sequence      | DAG Nodes | Manager Nodes
+--------------------------------------------------------------------------------
+Natural MSB-first          | a5, a4, a3, a2, we     | 20        | 34           
+Reversed / LSB-first       | we, a2, a3, a4, a5     | 18        | 27           
+Interleaved / Worst-case   | we, a5, a3, a4, a2     | 25        | 39           
+Optimal ordering           | a2, a4, a3, a5, we     | 13        | 19           
+--------------------------------------------------------------------------------
+After Dynamic Sifting      | Rudell Sifting Alg.    | 13        | 13           
+================================================================================
+
+FORMAL EQUIVALENCE CHECK:
+  Unminimized RTL Root : @-14
+  QM Minimized Root   : @-14
+  Canonical Match     : True
+  XOR Difference = 0  : True

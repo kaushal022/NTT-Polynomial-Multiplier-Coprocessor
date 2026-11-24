@@ -1,0 +1,83 @@
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
+-----------------------------------------------------------------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2024.2 (win64) Build 5239630 Fri Nov 08 22:35:27 MST 2024
+| Date         : Mon Nov 23 03:36:19 2026
+| Host         : MINEIncredible running 64-bit major release  (build 9200)
+| Command      : report_utilization -hierarchical -hierarchical_depth 4 -file results/implementation/soc_top_impl_utilization_hierarchical.rpt
+| Design       : soc_top
+| Device       : xc7z010clg400-1
+| Speed File   : -1
+| Design State : Routed
+-----------------------------------------------------------------------------------------------------------------------------------------------
+
+Utilization Design Information
+
+Table of Contents
+-----------------
+1. Utilization by Hierarchy
+
+1. Utilization by Hierarchy
+---------------------------
+
++-----------------------------------------+-----------------------------------------+------------+------------+---------+------+------+--------+--------+------------+
+|                 Instance                |                  Module                 | Total LUTs | Logic LUTs | LUTRAMs | SRLs |  FFs | RAMB36 | RAMB18 | DSP Blocks |
++-----------------------------------------+-----------------------------------------+------------+------------+---------+------+------+--------+--------+------------+
+| soc_top                                 |                                   (top) |       4087 |       3796 |     112 |  179 | 4316 |      9 |      7 |         18 |
+|   (soc_top)                             |                                   (top) |        111 |        111 |       0 |    0 |  140 |      8 |      0 |          0 |
+|   dbg_hub                               |                                 dbg_hub |        448 |        424 |      24 |    0 |  741 |      0 |      0 |          0 |
+|     (dbg_hub)                           |                                 dbg_hub |          0 |          0 |       0 |    0 |    0 |      0 |      0 |          0 |
+|     inst                                |              dbg_hub_xsdbm_v3_0_3_xsdbm |        448 |        424 |      24 |    0 |  741 |      0 |      0 |          0 |
+|       BSCANID.u_xsdbm_id                |           dbg_hub_xsdbm_v3_0_3_xsdbm_id |        448 |        424 |      24 |    0 |  741 |      0 |      0 |          0 |
+|         (BSCANID.u_xsdbm_id)            |           dbg_hub_xsdbm_v3_0_3_xsdbm_id |         35 |         35 |       0 |    0 |   34 |      0 |      0 |          0 |
+|         CORE_XSDB.UUT_MASTER            |          dbg_hub_xsdbm_v3_0_3_icon2xsdb |        272 |        248 |      24 |    0 |  554 |      0 |      0 |          0 |
+|         CORE_XSDB.U_ICON                |               dbg_hub_xsdbm_v3_0_3_icon |         17 |         17 |       0 |    0 |   28 |      0 |      0 |          0 |
+|         SWITCH_N_EXT_BSCAN.bscan_inst   |              dbg_hub_ltlib_v1_0_2_bscan |          0 |          0 |       0 |    0 |    0 |      0 |      0 |          0 |
+|         SWITCH_N_EXT_BSCAN.bscan_switch |       dbg_hub_xsdbm_v3_0_3_bscan_switch |        124 |        124 |       0 |    0 |  125 |      0 |      0 |          0 |
+|   u_cpu                                 |                            picorv32_axi |       1132 |       1044 |      88 |    0 |  624 |      0 |      0 |          0 |
+|     axi_adapter                         |                    picorv32_axi_adapter |          3 |          3 |       0 |    0 |    4 |      0 |      0 |          0 |
+|     picorv32_core                       |                                picorv32 |       1129 |       1041 |      88 |    0 |  620 |      0 |      0 |          0 |
+|   u_demux                               |                               axi_demux |         68 |         68 |       0 |    0 |    7 |      0 |      0 |          0 |
+|   u_ila_0                               |                                 u_ila_0 |       1135 |        984 |       0 |  151 | 1718 |      1 |      1 |          0 |
+|     (u_ila_0)                           |                                 u_ila_0 |          0 |          0 |       0 |    0 |    0 |      0 |      0 |          0 |
+|     inst                                |                 u_ila_0_ila_v6_2_16_ila |       1135 |        984 |       0 |  151 | 1718 |      1 |      1 |          0 |
+|       (inst)                            |                 u_ila_0_ila_v6_2_16_ila |          1 |          1 |       0 |    0 |    6 |      0 |      0 |          0 |
+|       ila_core_inst                     |            u_ila_0_ila_v6_2_16_ila_core |       1134 |        983 |       0 |  151 | 1712 |      1 |      1 |          0 |
+|         (ila_core_inst)                 |            u_ila_0_ila_v6_2_16_ila_core |         24 |          0 |       0 |   24 |   88 |      0 |      0 |          0 |
+|         ila_trace_memory_inst           |    u_ila_0_ila_v6_2_16_ila_trace_memory |          0 |          0 |       0 |    0 |    0 |      1 |      1 |          0 |
+|         u_ila_cap_ctrl                  | u_ila_0_ila_v6_2_16_ila_cap_ctrl_legacy |         78 |         31 |       0 |   47 |  127 |      0 |      0 |          0 |
+|         u_ila_regs                      |        u_ila_0_ila_v6_2_16_ila_register |        872 |        871 |       0 |    1 | 1266 |      0 |      0 |          0 |
+|         u_ila_reset_ctrl                |      u_ila_0_ila_v6_2_16_ila_reset_ctrl |          9 |          9 |       0 |    0 |   34 |      0 |      0 |          0 |
+|         u_trig                          |         u_ila_0_ila_v6_2_16_ila_trigger |        101 |         24 |       0 |   77 |  129 |      0 |      0 |          0 |
+|         xsdb_memory_read_inst           |      u_ila_0_ltlib_v1_0_2_generic_memrd |         50 |         48 |       0 |    2 |   68 |      0 |      0 |          0 |
+|   u_mlkem                               |                   mlkem_coprocessor_top |       1101 |       1073 |       0 |   28 |  955 |      0 |      6 |         18 |
+|     (u_mlkem)                           |                   mlkem_coprocessor_top |          0 |          0 |       0 |    0 |   18 |      0 |      0 |          0 |
+|     u_axi_slave                         |                    axi_lite_coprocessor |         55 |         55 |       0 |    0 |   91 |      0 |      0 |          0 |
+|     u_poly_mul_core                     |                         poly_multiplier |       1047 |       1019 |       0 |   28 |  846 |      0 |      6 |         18 |
+|       (u_poly_mul_core)                 |                         poly_multiplier |         93 |         93 |       0 |    0 |  233 |      0 |      0 |          0 |
+|       u_basemul                         |                                 basemul |        346 |        329 |       0 |   17 |  217 |      0 |      0 |         10 |
+|         (u_basemul)                     |                                 basemul |         34 |         17 |       0 |   17 |  104 |      0 |      0 |          0 |
+|         u_a0b0                          |                              mod_mul_10 |         50 |         50 |       0 |    0 |   13 |      0 |      0 |          2 |
+|         u_a0b1                          |                              mod_mul_11 |         72 |         72 |       0 |    0 |   25 |      0 |      0 |          2 |
+|         u_a1b0                          |                              mod_mul_12 |         63 |         63 |       0 |    0 |   25 |      0 |      0 |          2 |
+|         u_a1b1                          |                              mod_mul_13 |         50 |         50 |       0 |    0 |   25 |      0 |      0 |          2 |
+|         u_a1b1g                         |                              mod_mul_14 |         75 |         75 |       0 |    0 |   25 |      0 |      0 |          2 |
+|         u_c0                            |                              mod_add_15 |          6 |          6 |       0 |    0 |    0 |      0 |      0 |          0 |
+|         u_c1                            |                              mod_add_16 |          6 |          6 |       0 |    0 |    0 |      0 |      0 |          0 |
+|       u_bram_f                          |                               poly_bram |         12 |         12 |       0 |    0 |    0 |      0 |      1 |          0 |
+|       u_bram_g                          |                             poly_bram_0 |          0 |          0 |       0 |    0 |    0 |      0 |      1 |          0 |
+|       u_bram_temp                       |                             poly_bram_1 |          0 |          0 |       0 |    0 |    0 |      0 |      1 |          0 |
+|       u_bram_work                       |                             poly_bram_2 |          0 |          0 |       0 |    0 |    0 |      0 |      1 |          0 |
+|       u_neg_gamma                       |                                 mod_sub |         13 |         13 |       0 |    0 |    0 |      0 |      0 |          0 |
+|       u_ntt                             |                              ntt_engine |        584 |        573 |       0 |   11 |  396 |      0 |      2 |          8 |
+|         (u_ntt)                         |                              ntt_engine |         51 |         41 |       0 |   10 |  144 |      0 |      0 |          0 |
+|         u_addr_gen                      |                            ntt_addr_gen |        131 |        131 |       0 |    0 |   50 |      0 |      0 |          0 |
+|         u_butterfly                     |                               butterfly |        268 |        267 |       0 |    1 |  152 |      0 |      0 |          4 |
+|         u_scale_hi_mul                  |                                 mod_mul |         50 |         50 |       0 |    0 |   25 |      0 |      0 |          2 |
+|         u_scale_lo_mul                  |                               mod_mul_3 |         50 |         50 |       0 |    0 |   25 |      0 |      0 |          2 |
+|         u_scratch                       |                             poly_bram_4 |         30 |         30 |       0 |    0 |    0 |      0 |      1 |          0 |
+|         u_tw_rom                        |                             twiddle_rom |          4 |          4 |       0 |    0 |    0 |      0 |      1 |          0 |
+|   u_uart                                |                              simpleuart |         93 |         93 |       0 |    0 |  131 |      0 |      0 |          0 |
++-----------------------------------------+-----------------------------------------+------------+------------+---------+------+------+--------+--------+------------+
+* Note: The sum of lower-level cells may be larger than their parent cells total, due to cross-hierarchy LUT combining
+
+

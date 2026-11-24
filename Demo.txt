@@ -1,0 +1,68 @@
+Demo:
+
+
+C:\Xilinx\Vivado\2024.2\bin\xsdb.bat scripts/launch_zybo_demo.tcl
+
+# 1 fresh random pair (auto-detects COM7)
+python scripts/live_demo.py --port auto
+
+# Multiple fresh random pairs on explicit COM port
+python scripts/live_demo.py --port COM7 --vectors 5
+
+# Replay an exact previous random session (decimal or 0x hex seed from the banner)
+python scripts/live_demo.py --port auto --seed 0xA979A8A8 --vectors 5
+
+
+
+# Dense: (1 + 2x)(3 + 4x) -> 3 + 10x + 8x^2
+python scripts/live_demo.py --port auto -f "1,2" -g "3,4"
+
+# Large dense values (auto-reduced mod 3329)
+python scripts/live_demo.py --port auto -f "1,2,8939,88828" -g "3,4,2828,2727,290"
+
+# Sparse negacyclic wrap test: x * x^255 = -1 = 3328 (mod 3329)
+python scripts/live_demo.py --port auto -f "1:1" -g "255:1"
+
+# Supply one custom polynomial; generate the other randomly
+python scripts/live_demo.py --port auto -f "0:5,10:100,200:3000"
+
+
+
+
+# Deterministic NIST FIPS 203 test vector (tv4 * tv5)
+python scripts/live_demo.py --port auto --nist
+
+# Specific hex pairs by filename or relative path
+python scripts/live_demo.py --port auto --f-file tv1_input.hex --g-file tv3_input.hex
+python scripts/live_demo.py --port auto --f-file tb/vectors/tv4_input.hex --g-file tb/vectors/tv5_input.hex
+
+
+
+
+python scripts/live_demo.py --port auto -i
+
+
+# Show first 16 + last 4 coefficients instead of default 8 + 4
+python scripts/live_demo.py --port auto --coeffs 16
+
+# Print all 256 coefficients (indices 0..255)
+python scripts/live_demo.py --port auto --show-all
+
+
+
+
+
+# Run all 100 vectors from JSON on Zybo Z7-10
+python scripts/live_demo_100.py --port auto
+
+# Regenerate the 100-vector dataset via reference/gen_100_random_vectors.py first, then run
+python scripts/live_demo_100.py --port auto --regen
+
+# Load directly from .hex files (inputs_f.hex / inputs_g.hex / expected_h.hex)
+python scripts/live_demo_100.py --port auto --dataset tb/vectors/random_100
+
+# Run a slice (e.g. indices 10..19) with detailed tables for every vector
+python scripts/live_demo_100.py --port auto --start 10 --count 10 --verbose
+
+# Log all 100 live hardware outputs and digests to JSON
+python scripts/live_demo_100.py --port auto --save results/zybo_100_vec_log.json

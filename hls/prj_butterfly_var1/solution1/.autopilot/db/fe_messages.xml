@@ -1,0 +1,54 @@
+<xilinx:hls_fe_msgs>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="butterfly.cpp:4:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="barrett_reduce" ARG_PragmaIsValid="1" ARG_PragmaType="inline" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="butterfly.cpp:20:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="mod_add" ARG_PragmaIsValid="1" ARG_PragmaType="inline" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="butterfly.cpp:27:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="mod_sub" ARG_PragmaIsValid="1" ARG_PragmaType="inline" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="butterfly.cpp:35:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="mod_mul" ARG_PragmaIsValid="1" ARG_PragmaOptions="off" ARG_PragmaType="inline" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="N:/hls/run_hls.tcl:12:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaContext="directive" ARG_PragmaFunction="butterfly_hls" ARG_PragmaIsValid="1" ARG_PragmaOptions="name=butterfly_hls" ARG_PragmaType="top" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="butterfly.cpp:50:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="butterfly_hls" ARG_PragmaIsValid="1" ARG_PragmaOptions="ap_ctrl_hs port=return" ARG_PragmaType="interface" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="butterfly.cpp:51:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="butterfly_hls" ARG_PragmaIsValid="1" ARG_PragmaOptions="ap_none port=a" ARG_PragmaType="interface" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="butterfly.cpp:52:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="butterfly_hls" ARG_PragmaIsValid="1" ARG_PragmaOptions="ap_none port=b" ARG_PragmaType="interface" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="butterfly.cpp:53:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="butterfly_hls" ARG_PragmaIsValid="1" ARG_PragmaOptions="ap_none port=w" ARG_PragmaType="interface" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="butterfly.cpp:54:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="butterfly_hls" ARG_PragmaIsValid="1" ARG_PragmaOptions="ap_none port=mode" ARG_PragmaType="interface" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="butterfly.cpp:55:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="butterfly_hls" ARG_PragmaIsValid="1" ARG_PragmaOptions="ap_none port=out_lo" ARG_PragmaType="interface" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="butterfly.cpp:56:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="butterfly_hls" ARG_PragmaIsValid="1" ARG_PragmaOptions="ap_none port=out_hi" ARG_PragmaType="interface" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="butterfly.cpp:57:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="butterfly_hls" ARG_PragmaIsValid="1" ARG_PragmaOptions="II=1" ARG_PragmaType="pipeline" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="butterfly.cpp:58:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="butterfly_hls" ARG_PragmaIsValid="1" ARG_PragmaOptions="function instances=mod_mul limit=1" ARG_PragmaType="allocation" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="CODE_UNSUPPORTED" msg_id="214-131" msg_severity="INFO" msg_loc="butterfly.cpp:37:12" msg_body="Inlining function 'barrett_reduce(ap_uint&lt;24&gt;)' into 'mod_mul(ap_uint&lt;12&gt;, ap_uint&lt;12&gt;)'">
+        <args Callee="barrett_reduce(ap_uint&lt;24&gt;)" Callee-DebugLoc="File butterfly.cpp Line 3 Column 0" Caller="mod_mul(ap_uint&lt;12&gt;, ap_uint&lt;12&gt;)" Caller-DebugLoc="File butterfly.cpp Line 34 Column 0"/>
+    </msg>
+    <msg msg_groups="CODE_UNSUPPORTED" msg_id="214-131" msg_severity="INFO" msg_loc="butterfly.cpp:62:18" msg_body="Inlining function 'mod_add(ap_uint&lt;12&gt;, ap_uint&lt;12&gt;)' into 'butterfly_hls(ap_uint&lt;12&gt;, ap_uint&lt;12&gt;, ap_uint&lt;12&gt;, ap_uint&lt;1&gt;, ap_uint&lt;12&gt;&amp;, ap_uint&lt;12&gt;&amp;)'">
+        <args Callee="mod_add(ap_uint&lt;12&gt;, ap_uint&lt;12&gt;)" Callee-DebugLoc="File butterfly.cpp Line 19 Column 0" Caller="butterfly_hls(ap_uint&lt;12&gt;, ap_uint&lt;12&gt;, ap_uint&lt;12&gt;, ap_uint&lt;1&gt;, ap_uint&lt;12&gt;&amp;, ap_uint&lt;12&gt;&amp;)" Caller-DebugLoc="File butterfly.cpp Line 49 Column 0"/>
+    </msg>
+    <msg msg_groups="CODE_UNSUPPORTED" msg_id="214-131" msg_severity="INFO" msg_loc="butterfly.cpp:66:28" msg_body="Inlining function 'mod_sub(ap_uint&lt;12&gt;, ap_uint&lt;12&gt;)' into 'butterfly_hls(ap_uint&lt;12&gt;, ap_uint&lt;12&gt;, ap_uint&lt;12&gt;, ap_uint&lt;1&gt;, ap_uint&lt;12&gt;&amp;, ap_uint&lt;12&gt;&amp;)'">
+        <args Callee="mod_sub(ap_uint&lt;12&gt;, ap_uint&lt;12&gt;)" Callee-DebugLoc="File butterfly.cpp Line 26 Column 0" Caller="butterfly_hls(ap_uint&lt;12&gt;, ap_uint&lt;12&gt;, ap_uint&lt;12&gt;, ap_uint&lt;1&gt;, ap_uint&lt;12&gt;&amp;, ap_uint&lt;12&gt;&amp;)" Caller-DebugLoc="File butterfly.cpp Line 49 Column 0"/>
+    </msg>
+</xilinx:hls_fe_msgs>
+

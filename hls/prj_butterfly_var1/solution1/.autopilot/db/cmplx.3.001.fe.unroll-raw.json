@@ -1,0 +1,29 @@
+{
+  "0": {
+    "basicblocks": 14,
+    "calls": "1 1",
+    "file": "butterfly.cpp",
+    "fileloc": 42,
+    "instructions": 112,
+    "loads": {
+      "L": 3
+    },
+    "name": "butterfly_hls",
+    "stores": {
+      "T": 4
+    },
+    "total_instructions": 170
+  },
+  "1": {
+    "basicblocks": 3,
+    "calls": "",
+    "file": "butterfly.cpp",
+    "fileloc": 34,
+    "instructions": 29,
+    "name": "mod_mul",
+    "stores": {
+      "L": 1
+    },
+    "total_instructions": 29
+  }
+}

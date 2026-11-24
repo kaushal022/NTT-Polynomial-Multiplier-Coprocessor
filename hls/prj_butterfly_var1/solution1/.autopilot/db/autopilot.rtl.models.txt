@@ -1,0 +1,5 @@
+butterfly_hls_mul_12ns_12ns_24_1_0
+butterfly_hls_mul_24ns_14ns_37_1_0
+butterfly_hls_mac_muladd_13s_13s_13ns_13_4_0
+mod_mul
+butterfly_hls

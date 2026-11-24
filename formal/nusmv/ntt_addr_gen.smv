@@ -1,0 +1,102 @@
+MODULE main
+VAR
+    state       : {IDLE, ACTIVE, DONE};
+    layer_idx   : 0..6;
+    len         : {2, 4, 8, 16, 32, 64, 128};
+    group_start : 0..255;
+    j           : 0..127;
+    k           : 1..127;
+    mode        : {FWD, INV};
+    start       : boolean;
+    advance     : boolean;
+
+DEFINE
+    addr_lo    := (group_start + j) mod 256;
+    addr_hi    := (group_start + j + len) mod 256;
+    tw_addr    := k;
+    j_last     := (j >= len - 1);
+    next_group := group_start + 2 * len;
+    group_last := (next_group >= 256);
+    layer_last := (layer_idx >= 6);
+    ntt_done   := (state = DONE);
+
+ASSIGN
+    init(state)       := IDLE;
+    init(layer_idx)   := 0;
+    init(len)         := 128;
+    init(group_start) := 0;
+    init(j)           := 0;
+    init(k)           := 1;
+    init(mode)        := FWD;
+
+    next(state) := case
+        state = IDLE & start : ACTIVE;
+        state = ACTIVE & advance & j_last & group_last & layer_last : DONE;
+        state = DONE : IDLE;
+        TRUE : state;
+    esac;
+
+    next(layer_idx) := case
+        state = IDLE & start : 0;
+        state = ACTIVE & advance & j_last & group_last & !layer_last : (layer_idx + 1);
+        TRUE : layer_idx;
+    esac;
+
+    next(len) := case
+        state = IDLE & start & (mode = FWD) : 128;
+        state = IDLE & start & (mode = INV) : 2;
+        state = ACTIVE & advance & j_last & group_last : case
+            mode = FWD & len = 128 : 64;
+            mode = FWD & len = 64  : 32;
+            mode = FWD & len = 32  : 16;
+            mode = FWD & len = 16  : 8;
+            mode = FWD & len = 8   : 4;
+            mode = FWD & len = 4   : 2;
+            mode = INV & len = 2   : 4;
+            mode = INV & len = 4   : 8;
+            mode = INV & len = 8   : 16;
+            mode = INV & len = 16  : 32;
+            mode = INV & len = 32  : 64;
+            mode = INV & len = 64  : 128;
+            TRUE : len;
+        esac;
+        TRUE : len;
+    esac;
+
+    next(group_start) := case
+        state = IDLE & start : 0;
+        state = ACTIVE & advance & j_last & group_last : 0;
+        state = ACTIVE & advance & j_last & !group_last : (next_group mod 256);
+        TRUE : group_start;
+    esac;
+
+    next(j) := case
+        state = IDLE & start : 0;
+        state = ACTIVE & advance & j_last : 0;
+        state = ACTIVE & advance & !j_last : (j + 1) mod 128;
+        TRUE : j;
+    esac;
+
+    next(k) := case
+        state = IDLE & start & (mode = FWD) : 1;
+        state = IDLE & start & (mode = INV) : 127;
+        state = ACTIVE & advance & (mode = FWD) & j_last : case
+            k < 127 : k + 1;
+            TRUE : k;
+        esac;
+        state = ACTIVE & advance & (mode = INV) & j_last : case
+            k > 1 : k - 1;
+            TRUE : k;
+        esac;
+        TRUE : k;
+    esac;
+
+CTLSPEC AG (state = ACTIVE -> !(addr_lo = addr_hi))
+LTLSPEC G (state = ACTIVE -> !(addr_lo = addr_hi))
+
+CTLSPEC AG (layer_idx <= 6)
+
+CTLSPEC AG (tw_addr >= 1 & tw_addr <= 127)
+
+JUSTICE advance;
+CTLSPEC AG (state = ACTIVE -> AF (state = DONE))

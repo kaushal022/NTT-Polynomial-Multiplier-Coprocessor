@@ -1,0 +1,62 @@
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
+---------------------------------------------------------------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2024.2 (win64) Build 5239630 Fri Nov 08 22:35:27 MST 2024
+| Date         : Mon Nov 23 02:57:40 2026
+| Host         : MINEIncredible running 64-bit major release  (build 9200)
+| Command      : report_utilization -hierarchical -file results/synthesis/impl_utilization_hierarchical.rpt
+| Design       : mlkem_coprocessor_top
+| Device       : xc7z010clg400-1
+| Speed File   : -1
+| Design State : Routed
+---------------------------------------------------------------------------------------------------------------------------------------------
+
+Utilization Design Information
+
+Table of Contents
+-----------------
+1. Utilization by Hierarchy
+
+1. Utilization by Hierarchy
+---------------------------
+
++---------------------------+----------------------+------------+------------+---------+------+-----+--------+--------+------------+
+|          Instance         |        Module        | Total LUTs | Logic LUTs | LUTRAMs | SRLs | FFs | RAMB36 | RAMB18 | DSP Blocks |
++---------------------------+----------------------+------------+------------+---------+------+-----+--------+--------+------------+
+| mlkem_coprocessor_top     |                (top) |       1105 |       1077 |       0 |   28 | 961 |      0 |      6 |         18 |
+|   (mlkem_coprocessor_top) |                (top) |          0 |          0 |       0 |    0 |  18 |      0 |      0 |          0 |
+|   u_axi_slave             | axi_lite_coprocessor |         59 |         59 |       0 |    0 |  95 |      0 |      0 |          0 |
+|   u_poly_mul_core         |      poly_multiplier |       1047 |       1019 |       0 |   28 | 848 |      0 |      6 |         18 |
+|     (u_poly_mul_core)     |      poly_multiplier |         93 |         93 |       0 |    0 | 233 |      0 |      0 |          0 |
+|     u_basemul             |              basemul |        346 |        329 |       0 |   17 | 217 |      0 |      0 |         10 |
+|       (u_basemul)         |              basemul |         34 |         17 |       0 |   17 | 104 |      0 |      0 |          0 |
+|       u_a0b0              |           mod_mul_10 |         50 |         50 |       0 |    0 |  13 |      0 |      0 |          2 |
+|       u_a0b1              |           mod_mul_11 |         72 |         72 |       0 |    0 |  25 |      0 |      0 |          2 |
+|       u_a1b0              |           mod_mul_12 |         63 |         63 |       0 |    0 |  25 |      0 |      0 |          2 |
+|       u_a1b1              |           mod_mul_13 |         50 |         50 |       0 |    0 |  25 |      0 |      0 |          2 |
+|       u_a1b1g             |           mod_mul_14 |         75 |         75 |       0 |    0 |  25 |      0 |      0 |          2 |
+|       u_c0                |           mod_add_15 |          6 |          6 |       0 |    0 |   0 |      0 |      0 |          0 |
+|       u_c1                |           mod_add_16 |          6 |          6 |       0 |    0 |   0 |      0 |      0 |          0 |
+|     u_bram_f              |            poly_bram |         12 |         12 |       0 |    0 |   0 |      0 |      1 |          0 |
+|     u_bram_g              |          poly_bram_0 |          0 |          0 |       0 |    0 |   0 |      0 |      1 |          0 |
+|     u_bram_temp           |          poly_bram_1 |          0 |          0 |       0 |    0 |   0 |      0 |      1 |          0 |
+|     u_bram_work           |          poly_bram_2 |          0 |          0 |       0 |    0 |   0 |      0 |      1 |          0 |
+|     u_neg_gamma           |              mod_sub |         13 |         13 |       0 |    0 |   0 |      0 |      0 |          0 |
+|     u_ntt                 |           ntt_engine |        584 |        573 |       0 |   11 | 398 |      0 |      2 |          8 |
+|       (u_ntt)             |           ntt_engine |         51 |         41 |       0 |   10 | 144 |      0 |      0 |          0 |
+|       u_addr_gen          |         ntt_addr_gen |        131 |        131 |       0 |    0 |  50 |      0 |      0 |          0 |
+|       u_butterfly         |            butterfly |        269 |        268 |       0 |    1 | 152 |      0 |      0 |          4 |
+|         (u_butterfly)     |            butterfly |         85 |         84 |       0 |    1 | 102 |      0 |      0 |          0 |
+|         u_add_fw          |              mod_add |          0 |          0 |       0 |    0 |   0 |      0 |      0 |          0 |
+|         u_add_gs          |            mod_add_5 |         18 |         18 |       0 |    0 |   0 |      0 |      0 |          0 |
+|         u_mul_fw          |            mod_mul_6 |         87 |         87 |       0 |    0 |  25 |      0 |      0 |          2 |
+|         u_mul_gs          |            mod_mul_7 |         63 |         63 |       0 |    0 |  25 |      0 |      0 |          2 |
+|         u_sub_fw          |            mod_sub_8 |          4 |          4 |       0 |    0 |   0 |      0 |      0 |          0 |
+|         u_sub_gs          |            mod_sub_9 |         12 |         12 |       0 |    0 |   0 |      0 |      0 |          0 |
+|       u_scale_hi_mul      |              mod_mul |         50 |         50 |       0 |    0 |  25 |      0 |      0 |          2 |
+|       u_scale_lo_mul      |            mod_mul_3 |         50 |         50 |       0 |    0 |  25 |      0 |      0 |          2 |
+|       u_scratch           |          poly_bram_4 |         29 |         29 |       0 |    0 |   0 |      0 |      1 |          0 |
+|       u_tw_rom            |          twiddle_rom |          4 |          4 |       0 |    0 |   2 |      0 |      1 |          0 |
++---------------------------+----------------------+------------+------------+---------+------+-----+--------+--------+------------+
+* Note: The sum of lower-level cells may be larger than their parent cells total, due to cross-hierarchy LUT combining
+
+

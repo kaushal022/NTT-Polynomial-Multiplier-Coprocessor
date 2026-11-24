@@ -1,0 +1,6 @@
+Ordering_Scheme,Variable_Sequence,Shared_DAG_Nodes,BDD_Manager_Nodes
+"Natural MSB-first","a5, a4, a3, a2, we",20,34
+"Reversed / LSB-first","we, a2, a3, a4, a5",18,27
+"Interleaved / Worst-case","we, a5, a3, a4, a2",25,39
+"Optimal ordering","a2, a4, a3, a5, we",13,19
+"After Dynamic Sifting","Optimal Sifted Order",13,13

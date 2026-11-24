@@ -1,0 +1,25 @@
+# Vivado / EDA temporary build directories and logs
+.Xil/
+xsim.dir/
+*.jou
+*.log
+*.pb
+*.wdb
+*.vcd
+*.str
+*.backup.*
+clockInfo.txt
+
+# Python artifacts
+__pycache__/
+*.py[cod]
+*$py.class
+
+# C / GCC object and temporary files
+*.o
+*.obj
+*.d
+
+# OS generated files
+.DS_Store
+Thumbs.db
